@@ -157,6 +157,10 @@ def scrape():
     facts_html_path = os.path.join(".", "facts.html")
     facts.to_html(facts_html_path, encoding="utf-8", index=True)
 
+    # Render the Pandas DataFrame as html.
+    facts_html = facts.to_html()
+    # Assign this variable to mars_dict at the end as: mars_dict["facts_html"] = facts_html
+
     mars_df = facts.T
     mars_df.columns = ['Equatorial Diameter', 'Polar Diameter', 'Mass', 'Moons',
         'Orbit Distance', 'Orbit Period', 'Surface Temperature',
@@ -313,6 +317,9 @@ def scrape():
 
     #Close the driver
     driver.close()
+
+    # Assign the facts_html to mars_dict,
+    mars_dict["facts_html"] = facts_html
 
     return mars_dict
 

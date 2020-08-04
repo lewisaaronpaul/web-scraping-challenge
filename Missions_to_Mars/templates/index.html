@@ -45,10 +45,15 @@
             </div>
             <div class="card-body">{{mars_dict.mars_weather}}</div>
           </div>
-        <!-- end current weather on mars -->
+          <!-- end current weather on mars -->
+          <br>
+          <!-- Mars info table -->
+          <div>
+            {{mars_dict.facts_html | safe }}
+          </div>
+          <!-- end of Mars info table -->
         </div>
       </div>
-
       <!-- Mars Hemispheres -->
       <h2 class="mb-1 p-2 text-center"> Mars Hemispheres</h2>
       <div class="hline mb-2 text-center"></div>
